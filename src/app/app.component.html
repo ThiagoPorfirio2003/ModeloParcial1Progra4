@@ -1,0 +1,9 @@
+<app-header (mostrarMenuPeliculaEvent)="this.activarHeaderPeliculas($event)"></app-header>
+<app-header-peliculas *ngIf="this.mostrarHeaderPeliculas"></app-header-peliculas>
+<app-header-actores *ngIf="!this.mostrarHeaderPeliculas"></app-header-actores>
+
+<!--
+<app-actor-alta></app-actor-alta>
+-->
+
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<div class="container" >
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-primary">Actores</span>
+    </h4>
+
+    <ul class="scroll_ul">
+        <li *ngFor="let actor of listaActores" class="list-group-item bg-primary">
+            <button type="button" class="list-group-item list-group-item-action active" aria-current="true" (click)="this.pasarActorElejido(actor)">
+                {{actor.apellido}} {{actor.nombre}}
+            </button>
+        </li>
+    </ul> 
+</div>

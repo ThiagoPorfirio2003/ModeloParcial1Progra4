@@ -1,0 +1,21 @@
+<ul class="list-group"> 
+    <li class="list-group-item list-group-item-secondary">NOMBRE: {{pelicula.nombre}}</li>
+    <li class="list-group-item list-group-item-primary">GENERO: {{pelicula.tipo}}</li>
+    <li class="list-group-item list-group-item-secondary">ESTRENO: {{pelicula.fechaEstreno}}</li>
+    <li class="list-group-item list-group-item-primary">CANTIDAD DE PUBLICO: {{pelicula.cantidadPublico}}</li>
+    <li class="list-group-item list-group-item-secondary">FOTO: <img src={{pelicula.urlFoto}} alt="40px" width="40px"> </li>
+</ul>
+
+
+
+    <!--
+    <tr *ngFor="let pelicula of peliculas">
+        <td>{{pelicula.id}}</td>
+        <td>{{pelicula.getNombre()}}</td>
+        <td>{{pelicula.getTipo()}}</td>
+        <td>{{pelicula.getFechaEstreno()}}</td>
+        <td>{{pelicula.getCantidadPublico()}}</td>
+        <td>{{pelicula.getFoto()}}</td>
+    </tr>
+    -->
+

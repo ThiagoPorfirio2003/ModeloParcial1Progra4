@@ -1,0 +1,33 @@
+<h4 class="mb-3">Ingresar pelicula</h4>
+<form class="needs-validation" novalidate="">
+    <div class="row g-3">
+
+        <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="firstName" name="nombre" placeholder="Juan" [(ngModel)]="this.nombre">
+        </div>
+
+        <div class="col-sm-6">
+            <label for="lastName" class="form-label">Tipo</label>
+            <input type="text" class="form-control" id="lastName" name="apellido" placeholder="Perez"[(ngModel)]="this.tipo">
+        </div>
+
+        <div class="col-12">
+            <label for="username" class="form-label">Fecha de estreno</label>
+            <input type="date" class="form-control" id="username" placeholder="juan_Perez" name="nombreUsuario" [(ngModel)]="this.fechaEstreno">
+        </div>
+
+        <div class="col-12">
+            <label for="email" class="form-label">Cantidad de publico</label>
+            <input type="email" class="form-control" id="email" placeholder="juan@ejemplo.com" name="mail" [(ngModel)]="this.cantidadPublico">
+        </div>
+
+        <div class="col-12">
+            <label for="address" class="form-label">Foto</label>
+            <input type="file" accept=".png, .jpg, .jpeg" class="form-control" id="address" name="Foto" (change)="this.recibirArchivo($event)">
+        </div>
+    </div>
+
+    <button class="w-100 btn btn-primary btn-lg" (click)="this.guardarPelicula()">Registrar</button>
+
+</form>

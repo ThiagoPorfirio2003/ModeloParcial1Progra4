@@ -1,0 +1,23 @@
+<table class="table table-striped table-dark">
+    <tr>
+       <th>
+        NOMBRE
+       </th>
+       <th>
+        Peliculas
+       </th>
+       <th>
+        Pais
+       </th>
+       <th>
+        Detalles
+       </th>
+    </tr>
+
+    <tr *ngFor="let actor of listaActores">
+        <td>{{actor.nombre}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="this.pasarActor(actor,1)">Elegir</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="this.pasarActor(actor,2)">Elegir</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="this.pasarActor(actor,3)">Elegir</button></td>
+    </tr>
+</table>

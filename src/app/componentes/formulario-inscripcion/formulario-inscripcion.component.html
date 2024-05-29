@@ -1,0 +1,171 @@
+<h4 class="mb-3">Crear actor</h4>
+<form class="needs-validation" [formGroup]="this.formGroup">
+    <div class="row g-3">
+        <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nombre/s</label>
+            <input type="text" class="form-control" id="firstName" name="nombre" formControlName="nombre"  [(ngModel)]="this.nombre">
+            
+            <div *ngIf="this.formGroup.controls['nombre'].errors != null && this.formGroup.controls['nombre'].touched">
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['minlength']">
+                    El nombre debe tener al menos 2 letras
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['pattern']">
+                    El nombre debe tener solo letras y espacios 
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['maxlength']">
+                    El nombre no puede tener mas de 20 letras
+                </small>
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['espaciosAlInicioValidador'] == null">
+                    El nombre no puede iniciar con espacios
+                </small>
+            </div>
+
+        </div>
+
+        
+    <div class="col-sm-6">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="lastName" name="apellido" formControlName="apellido" [(ngModel)]="this.apellido">
+
+            <div *ngIf="this.formGroup.controls['apellido'].errors != null && this.formGroup.controls['apellido'].touched">
+                <small style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['minlength']">
+                    El apellido debe tener al menos 2 letras
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['pattern']">
+                    El apellido debe tener solo letras y espacios 
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['maxlength']">
+                    El apellido no puede tener mas de 20 letras
+                </small>
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['espaciosAlInicioValidador'] != null">
+                    El nombre no puede iniciar con espacios
+                </small>
+
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label for="username" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="username" name="nombreUsuario" formControlName="nombreUsuario" [(ngModel)]="this.nombreUsuario">
+
+            <div *ngIf="this.formGroup.controls['nombreUsuario'].errors != null && this.formGroup.controls['nombreUsuario'].touched">
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombreUsuario'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombreUsuario'].errors!['minlength']">
+                    El nombre de usuario debe tener al menos 2 letras
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombreUsuario'].errors!['maxlength']">
+                    El nombre de usuario no puede tener mas de 20 letras
+                </small>
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombreUsuario'].errors!['hayEspacios']">
+                    El nombre de usuario no puede tener espacios
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="col-12">
+            <label for="email" class="form-label">Mail</label>
+            <input type="email" class="form-control" id="email" name="mail" formControlName="mail" [(ngModel)]="this.mail">
+
+            <div *ngIf="this.formGroup.controls['mail'].errors != null && this.formGroup.controls['mail'].touched">
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['mail'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['mail'].errors!['email']">
+                    El mail ingresado no es valido
+                </small>
+
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label for="address" class="form-label">Cantidad de peliculas en las que participo</label>
+            <input type="number" class="form-control" id="address" name="cantidadDePeliculasParticipe" formControlName="cantidadDePeliculasParticipe" [(ngModel)]="this.cantidadDePeliculasParticipe">
+        
+            <div *ngIf="this.formGroup.controls['nombre'].errors != null && this.formGroup.controls['cantidadDePeliculasParticipe'].touched">
+                <small style="color: red;" *ngIf="this.formGroup.controls['cantidadDePeliculasParticipe'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['cantidadDePeliculasParticipe'].errors!['min']">
+                    La cantidad de peliculas no puede ser inferior a 1
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['cantidadDePeliculasParticipe'].errors!['pattern']">
+                    Solo se pueden ingresar numeros
+                </small>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label for="address2" class="form-label">Pelicula mas exitosa</label>
+            <input type="text" class="form-control" id="address2" name="nombrePeliculaMasExitosa" formControlName="nombrePeliculaMasExitosa" [(ngModel)]="this.nombrePeliculaMasExitosa">
+        
+            <div *ngIf="this.formGroup.controls['nombrePeliculaMasExitosa'].errors != null && this.formGroup.controls['nombrePeliculaMasExitosa'].touched">
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombrePeliculaMasExitosa'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombrePeliculaMasExitosa'].errors!['minlength']">
+                    El nombre debe tener al menos 2 letras
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombrePeliculaMasExitosa'].errors!['pattern']">
+                    El nombre debe tener solo letras y espacios 
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombrePeliculaMasExitosa'].errors!['maxlength']">
+                    El nombre no puede tener mas de 20 letras
+                </small>
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombrePeliculaMasExitosa'].errors!['espaciosAlInicioValidador'] == null">
+                    El nombre no puede iniciar con espacios
+                </small>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label for="zip" class="form-label">Zip</label>
+            <input type="number" class="form-control" id="zip" name="zip" formControlName="zip" [(ngModel)]="this.zip">
+
+            <div *ngIf="this.formGroup.controls['zip'].errors != null && this.formGroup.controls['zip'].touched">
+                <small style="color: red;" *ngIf="this.formGroup.controls['zip'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['zip'].errors!['min']">
+                    El zip debe tener al menos 4 caracteres
+                </small>
+            </div>
+
+        </div>
+       
+    </div>
+
+    <button class="w-100 btn btn-primary btn-lg" [disabled]="(this.formGroup.status === 'INVALID')" (click)="this.guardarActor()">Registrar</button>
+    <button class="w-100 btn btn-primary btn-lg" (click)="this.guardarActor()">Registrar</button>
+
+</form>
